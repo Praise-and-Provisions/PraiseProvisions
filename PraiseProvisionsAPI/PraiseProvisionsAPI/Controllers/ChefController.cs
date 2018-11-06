@@ -28,9 +28,14 @@ namespace PraiseProvisionsAPI.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<IActionResult> Get(int id)
         {
-            return "value";
+            var chef = _context.Chefs.FirstOrDefault(x => x.ID == id);
+            if (chef == null)
+            {
+                return NotFound();
+            }
+            return Ok(chef);
         }
 
         // POST api/<controller>

@@ -27,6 +27,27 @@ namespace PraiseProvisionsAPI.Data
                     FirstName = "Paula",
                     LastName = "Deen",
                     City = "Albany"
+                },
+                new Chef
+                {
+                    ID = 2,
+                    FirstName = "Gordon",
+                    LastName = "Ramsey",
+                    City = "Los Angeles"
+                },
+                new Chef
+                {
+                    ID = 3,
+                    FirstName = "Jimmy",
+                    LastName = "Fallon",
+                    City = "Jamaica"
+                },
+                new Chef
+                {
+                    ID = 4,
+                    FirstName = "Jack",
+                    LastName = "TheRipper",
+                    City = "Omaha"
                 }
             );
         }
