@@ -1,0 +1,34 @@
+﻿@model PraiseProvisions.Models.UserFavorite
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UserFavorite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserProfile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserProfile.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurant)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Restaurant.ID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UserProfileID" />
+        <input type="hidden" asp-for="RestaurantID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
