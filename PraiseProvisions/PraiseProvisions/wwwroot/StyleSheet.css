@@ -1,0 +1,44 @@
+﻿body {
+    background-image: url("./background-restaurant.jpg");
+    background-size: cover;
+}
+
+a {
+    color: rgb(203,47,0);
+    text-decoration: none;
+}
+
+.nav h2 {
+    padding: 0 1em;
+}
+ 
+.nav {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0 4em;
+    padding: 0 0.4em;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Kumar One Outline', cursive;
+    color: rgb(203,47,0);
+    font-weight: 500;
+    font-size: 80px;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(203,47,0);
+    font-weight: 400;
+    font-size: 25px;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+}
+
+.index-main {
+    text-align: center;
+}
