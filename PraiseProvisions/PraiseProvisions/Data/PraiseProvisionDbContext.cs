@@ -17,6 +17,7 @@ namespace PraiseProvisions.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserFavorite>().HasKey(uf => new { uf.RestaurantID, uf.UserProfileID });
+            
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
