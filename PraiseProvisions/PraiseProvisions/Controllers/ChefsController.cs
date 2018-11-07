@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using PraiseProvisions.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +24,15 @@ namespace PraiseProvisions.Controllers
                     response.EnsureSuccessStatusCode();
 
                     var stringResult = await response.Content.ReadAsStringAsync();
-
-                    return Ok(stringResult);
+                    var rawChefs = JsonConvert.DeserializeObject<CelebrityChef>(stringResult);
+                    int i = 0;
+                    return Ok(new {
+                        id = rawChefs.ID,
+                        FirstName = rawChefs.firstName,
+                        LastName = rawChefs.lastName,
+                        City = rawChefs.city,
+                        Favorites = rawChefs.favorites
+                    });
                 }
                 catch (HttpRequestException e)
                 {
