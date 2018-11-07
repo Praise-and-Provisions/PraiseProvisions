@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("./background-restaurant.jpg");
+    background-image: url("Images/background-restaurant.jpg");
     background-size: cover;
 }
 
@@ -41,4 +41,50 @@ h3 {
 
 .index-main {
     text-align: center;
+}
+
+.favicon {
+    height: 30px;
+    width: 30px;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.single-about {
+    margin: 5px auto;
+    width: 75%;
+}
+
+.about-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+    margin-right: 10px;
+    padding-bottom: 2px;
+}
+
+}
+
+.about {
+    width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.blurb {
+    padding: 50px;
+    margin: 0 auto;
+    background-color: rgb(193, 197, 204);
+    font-family: 'Raleway', sans-serif;
 }
