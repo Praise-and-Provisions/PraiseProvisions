@@ -22,17 +22,14 @@ namespace PraiseProvisions.Controllers
                     client.BaseAddress = new Uri("https://praiseapi.azurewebsites.net");
                     var response = await client.GetAsync($"/api/chef");
                     response.EnsureSuccessStatusCode();
-
+                 
                     var stringResult = await response.Content.ReadAsStringAsync();
-                    var rawChefs = JsonConvert.DeserializeObject<CelebrityChef>(stringResult);
-                    int i = 0;
-                    return Ok(new {
-                        id = rawChefs.ID,
-                        FirstName = rawChefs.firstName,
-                        LastName = rawChefs.lastName,
-                        City = rawChefs.city,
-                        Favorites = rawChefs.favorites
-                    });
+
+                    // required to convert to a List<CelebrityChef> since the json coming from API is numerous arrays from their database.
+                    var rawChefs = JsonConvert.DeserializeObject<List<CelebrityChef>>(stringResult);
+
+                    //send chefs to view
+                    return View(rawChefs);
                 }
                 catch (HttpRequestException e)
                 {

@@ -1,3 +1,11 @@
-﻿@{
+﻿@model List<PraiseProvisions.Models.CelebrityChef>
+
+@{
     Layout = "_Layout";
+}
+
+
+@foreach (var item in Model)
+{
+    <p> @item.firstName</p>
 }
