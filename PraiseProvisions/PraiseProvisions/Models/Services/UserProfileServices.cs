@@ -19,20 +19,20 @@ namespace PraiseProvisions.Models.Services
 
         public async Task CreateUserProfile(UserProfile profile)
         {
-            _context.UserProfiles.CreateUserProfile();
+            _context.UserProfiles.Add(profile);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteUserProfile(int ID)
         {
-            UserProfile profile = await GetUserProfile(id);
-            _context.UserProfiles.DeleteUserProfile(profile);
+            UserProfile profile = await GetUserProfile(ID);
+            _context.UserProfiles.Remove(profile);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<UserProfile> GetUserProfile(int? ID)
+        public async Task<UserProfile> GetUserProfile(int? id)
         {
-            return await _context.Restaurants.FirstOrDefaultAsync(x => x.ID == id);
+            return await _context.UserProfiles.FirstOrDefaultAsync(x => x.ID == id);
         }
 
         public async Task<List<UserProfile>> GetUserProfiles()
@@ -40,7 +40,7 @@ namespace PraiseProvisions.Models.Services
             return await _context.UserProfiles.ToListAsync();
         }
 
-        public Task UpdateUserProfile(UserProfile profile)
+        public async Task UpdateUserProfile(UserProfile profile)
         {
             _context.UserProfiles.Update(profile);
             await _context.SaveChangesAsync();

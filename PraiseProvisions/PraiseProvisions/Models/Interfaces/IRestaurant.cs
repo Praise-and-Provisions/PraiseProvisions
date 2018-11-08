@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PraiseProvisions.Models.Interfaces
 {
-    interface IRestaurant
+    public interface IRestaurant
     {
         //Create
         Task CreateRestaurant(Restaurant restaurant);

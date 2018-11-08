@@ -19,20 +19,20 @@ namespace PraiseProvisions.Models.Services
 
         public async Task CreateRestaurant(Restaurant restaurant)
         {
-            _context.Restaurant.CreateRestaurant(restaurant);
+            _context.Restaurants.Add(restaurant);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteRestaurant(int ID)
         {
-            Restaurant restaurant = await GetRestaurant(id);
-            _context.Restaurants.DeleteRestaurant(restaurant);
+            Restaurant restaurant = await GetRestaurant(ID);
+            _context.Restaurants.Remove(restaurant);
             await _context.SaveChangesAsync();
         }
 
         public async Task<Restaurant> GetRestaurant(int? ID)
         {
-            return await _context.Restaurants.FirstOrDefaultAsync(x => x.ID == id);
+            return await _context.Restaurants.FirstOrDefaultAsync(x => x.ID == ID);
         }
 
         public async Task<List<Restaurant>> GetRestaurants()
@@ -40,7 +40,7 @@ namespace PraiseProvisions.Models.Services
             return await _context.Restaurants.ToListAsync();
         }
 
-        public Task UpdateRestaurant(Restaurant restaurant)
+        public async Task UpdateRestaurant(Restaurant restaurant)
         {
             _context.Restaurants.Update(restaurant);
             await _context.SaveChangesAsync();
