@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PraiseProvisions.Models;
+using PraiseProvisions.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,11 +82,7 @@ namespace PraiseProvisions.Controllers
                         }
                         index++;
                     }
-                    //send chefs to view  
-                    //return View(rawChefRecommendations);
-                    //return View(rawYelpRecommendations);
-
-                    return View(combinedResults);
+                    return View(new FavoritesCombined { UserID = userId, ResultsList = combinedResults });
                 }
                 catch (HttpRequestException e)
                 {

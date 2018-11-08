@@ -1,11 +1,11 @@
-﻿@model List<PraiseProvisions.Models.ChefResults>
+﻿@model PraiseProvisions.Models.ViewModel.FavoritesCombined
 
 @{
     Layout = "_Layout";
 }
 
 <div class="resultsBody">
-    @foreach (var item in Model)
+    @foreach (var item in Model.ResultsList)
     {
         <div class="thumbnail">
             <div class="restImg">
@@ -18,6 +18,10 @@
                 <p>
                 Address: @item.address
                 </p>
+                <form method="POST" asp-controller="AddFavorite">
+                    <input type="hidden" asp-route-id="@Model.UserID" asp-route-result="@item" name="add" />
+                    <button>Add Restaurant</button>
+                </form>
             </div>
             <div class="chefImage">
                 <img src="~/ramsay.png"/>
