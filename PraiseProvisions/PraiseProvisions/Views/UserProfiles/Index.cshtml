@@ -16,6 +16,7 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.fullName)
+               @*<label asp-for="fullName"></label>*@
             </th>
             <th></th>
         </tr>
@@ -25,6 +26,7 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.fullName)
+                @*<label asp-for="fullName"></label>*@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

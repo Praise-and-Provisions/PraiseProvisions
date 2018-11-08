@@ -1,0 +1,15 @@
+﻿@model List<PraiseProvisions.Models.ChefResults>
+
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var item in Model)
+{
+    <p>
+    @item.restaurantName
+    </p>
+    <p>
+    @item.address
+    </p>
+}
