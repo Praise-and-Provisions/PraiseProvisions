@@ -4,12 +4,24 @@
     Layout = "_Layout";
 }
 
-@foreach (var item in Model)
-{
-    <p>
-    @item.restaurantName
-    </p>
-    <p>
-    @item.address
-    </p>
-}
+<div class="resultsBody">
+    @foreach (var item in Model)
+    {
+        <div class="thumbnail">
+            <div class="restImg">
+                <img src="~/food.jpg"/>
+            </div>
+            <div class="restDetails">
+                <p>
+                Name: @item.restaurantName
+                </p>
+                <p>
+                Address: @item.address
+                </p>
+            </div>
+            <div class="chefImage">
+                <img src="~/ramsay.png"/>
+            </div>
+        </div>
+    }
+</div>
