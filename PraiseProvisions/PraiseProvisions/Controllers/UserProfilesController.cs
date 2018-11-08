@@ -64,7 +64,7 @@ namespace PraiseProvisions.Controllers
             {
                 _context.Add(userProfile);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = userProfile.ID });
             }
             return View(userProfile);
         }
