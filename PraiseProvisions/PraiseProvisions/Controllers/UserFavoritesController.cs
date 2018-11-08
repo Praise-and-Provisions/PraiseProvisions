@@ -26,6 +26,24 @@ namespace PraiseProvisions.Controllers
             return View(await praiseProvisionDbContext.ToListAsync());
         }
 
+        public async Task<IActionResult> TESTIndex(int id)
+        {
+            var test = await _context.UserFavorites
+                .Include(p => p.UserProfile)
+                .Include(r => r.Restaurant)
+                .Where(f => f.UserProfileID == id)
+                .Select(f =>
+                   new Restaurant
+                   {
+                       ID = f.Restaurant.ID,
+                       Name = f.Restaurant.Name,
+                       Address = f.Restaurant.Address,
+                       Description = f.Restaurant.Description
+                   }
+                ).ToListAsync();
+            return View(test);
+        }
+
         // GET: UserFavorites/Details/5
         public async Task<IActionResult> Details(int? id)
         {
