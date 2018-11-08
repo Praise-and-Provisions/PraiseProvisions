@@ -1,14 +1,17 @@
 ﻿<head>
     <link rel="stylesheet" href="StyleSheet.css" />
-    <link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body>
     <div class="index-main">
-        <h1 class="banner-heading">
-            PRAISE + PROVISIONS
-        </h1>
+        <header>
+            <h1 class="banner-heading">
+                PRAISE + PROVISIONS
+            </h1>
+        </header>
 
         <div class="nav">
             <h2><a href="/UserFavorites">MY RESTAURANTS</a></h2>
@@ -18,12 +21,9 @@
             -enter a city-
         </h3>
 
-        <form method="POST">
-            <br />
-            <input type="text" maxlength="30"/>
-            <br />
-            <button type="submit">SEARCH</button>
-            <br />
+        <form class="example" method="POST">
+            <input class="searchBar" type="text" maxlength="30" placeholder="Search ..." />
+            <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 </body>
