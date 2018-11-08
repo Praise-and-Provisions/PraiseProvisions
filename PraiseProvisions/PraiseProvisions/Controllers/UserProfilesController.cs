@@ -58,7 +58,7 @@ namespace PraiseProvisions.Controllers
             {
                 // Create the user profile through dependency service
                 await _profiles.CreateUserProfile(profile);
-                return RedirectToAction("UserIndex", "Home", new { id = profile.ID });
+                return RedirectToAction("UserIndex", "Home", new { userID = profile.ID });
             }
             return View(profile);
         }

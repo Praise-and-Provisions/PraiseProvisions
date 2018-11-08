@@ -2,7 +2,8 @@
     <h3>
         -enter a city-
     </h3>
-    <form class="example" method="POST" asp-controller="Results">
+    <form class="example" method="POST" asp-controller="Results" asp-action="Index">
+        <input type="hidden" name="userId" value="@ViewData["userId"]" />
         <input class="searchBar" type="text" maxlength="30" asp-route-data="searchterm" placeholder="Search ..." name="search" />
         <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
     </form>

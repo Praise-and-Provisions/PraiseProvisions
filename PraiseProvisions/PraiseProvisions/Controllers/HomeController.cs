@@ -11,7 +11,7 @@ namespace PraiseProvisions.Controllers
 
         public IActionResult UserIndex(int userID)
         {
-            int ID = userID;
+            ViewData["userId"] = userID;
             return View("Views/Home/Index.cshtml");
         }
     }

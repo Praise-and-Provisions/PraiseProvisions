@@ -14,7 +14,7 @@ namespace PraiseProvisions.Controllers
     public class ResultsController : Controller
     {
         [HttpPost]
-        public async Task<IActionResult> Index(string search)
+        public async Task<IActionResult> Index(string search, int userId)
         {
             using (var chefClient = new HttpClient())
             {
