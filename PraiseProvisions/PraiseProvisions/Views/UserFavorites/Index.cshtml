@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>My Favorites</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -31,9 +31,9 @@
                 @Html.DisplayFor(modelItem => item.Restaurant.ID)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
         </tr>
 }
