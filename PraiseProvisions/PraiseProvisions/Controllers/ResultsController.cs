@@ -13,14 +13,14 @@ namespace PraiseProvisions.Controllers
     [Route("[controller]")]
     public class ResultsController : Controller
     {
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        [HttpPost]
+        public async Task<IActionResult> Index(string search)
         {
             using (var chefClient = new HttpClient())
             {
                 try
                 {
-                    string tempCity = "seattle";//hard coded, will replace with text box input
+                    //string tempCity = "seattle";//hard coded, will replace with text box input
                     chefClient.BaseAddress = new Uri("https://praiseapi.azurewebsites.net");
                     var response = await chefClient.GetAsync($"/api/recommendations");
                     response.EnsureSuccessStatusCode();
@@ -32,14 +32,14 @@ namespace PraiseProvisions.Controllers
 
                     var yelpRequest = new Yelp.Api.Models.SearchRequest();
                     yelpRequest.Term = "restaurants";
-                    yelpRequest.Location = tempCity;//hard coded, will replace with text box input
+                    yelpRequest.Location = search.ToLower();//hard coded, will replace with text box input
                     yelpRequest.MaxResults = 50;
 
                     var yelpClient = new Yelp.Api.Client("e0ZfT6muy7b6ZDYXAJVWjIx_oM4eCQSxVxaFGhjJSrLfHRoEX6XgUExr7DCGufP-WTImBXy150jg5eC12i5l2nVcLl5RvmZbck26hv6a_BpIvEhfOZc0YEfFPTfjW3Yx");
                     var yelpResults = await yelpClient.SearchBusinessesAllAsync(yelpRequest);
                     var rawYelpRecommendations = yelpResults.Businesses;
 
-                    IEnumerable<ChefResults> filteredChefRecommendations = rawChefRecommendations.Where(x => x.city.ToLower() == tempCity.ToLower());
+                    IEnumerable<ChefResults> filteredChefRecommendations = rawChefRecommendations.Where(x => x.city.ToLower() == search.ToLower());
                     List<ChefResults> combinedResults = new List<ChefResults>();
 
                     foreach(var item in rawYelpRecommendations)
