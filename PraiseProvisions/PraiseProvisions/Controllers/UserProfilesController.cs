@@ -7,26 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PraiseProvisions.Data;
 using PraiseProvisions.Models;
+using PraiseProvisions.Models.Interfaces;
 
 namespace PraiseProvisions.Controllers
 {
     public class UserProfilesController : Controller
     {
-        private readonly PraiseProvisionDbContext _context;
+        private readonly IUserProfile _profiles;
 
-        public UserProfilesController(PraiseProvisionDbContext context)
+        public UserProfilesController(IUserProfile context)
         {
-            _context = context;
+            _profiles = context;
         }
 
         // GET: UserProfiles
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+     
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UserProfiles.ToListAsync());
+            return View(await _profiles.GetUserProfiles());
         }
 
         // GET: UserProfiles/Details/5
@@ -37,14 +35,15 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var userProfile = await _context.UserProfiles
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (userProfile == null)
+            // create new reference to the existing user profile in the database
+            UserProfile profile = await _profiles.GetUserProfile(id);
+
+            if (profile == null)
             {
                 return NotFound();
             }
 
-            return View(userProfile);
+            return View(profile);
         }
 
         // GET: UserProfiles/Create
@@ -58,15 +57,16 @@ namespace PraiseProvisions.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,fullName")] UserProfile userProfile)
+        public async Task<IActionResult> Create([Bind("ID,fullName")] UserProfile profile)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(userProfile);
-                await _context.SaveChangesAsync();
+                // Create the user profile through dependency service
+                await _profiles.CreateUserProfile(profile);
+
                 return RedirectToAction(nameof(Index));
             }
-            return View(userProfile);
+            return View(profile);
         }
 
         // GET: UserProfiles/Edit/5
@@ -77,12 +77,12 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var userProfile = await _context.UserProfiles.FindAsync(id);
-            if (userProfile == null)
+            var profile = await _profiles.GetUserProfile(id);
+            if (profile == null)
             {
                 return NotFound();
             }
-            return View(userProfile);
+            return View(profile);
         }
 
         // POST: UserProfiles/Edit/5
@@ -90,9 +90,9 @@ namespace PraiseProvisions.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,fullName")] UserProfile userProfile)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,fullName")] UserProfile profile)
         {
-            if (id != userProfile.ID)
+            if (id != profile.ID)
             {
                 return NotFound();
             }
@@ -101,12 +101,11 @@ namespace PraiseProvisions.Controllers
             {
                 try
                 {
-                    _context.Update(userProfile);
-                    await _context.SaveChangesAsync();
+                    await _profiles.UpdateUserProfile(profile);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserProfileExists(userProfile.ID))
+                    if (!UserProfileExists(profile.ID))
                     {
                         return NotFound();
                     }
@@ -117,7 +116,7 @@ namespace PraiseProvisions.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(userProfile);
+            return View(profile);
         }
 
         // GET: UserProfiles/Delete/5
@@ -128,14 +127,14 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var userProfile = await _context.UserProfiles
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (userProfile == null)
+            UserProfile profile = await _profiles.GetUserProfile(id);
+
+            if (profile == null)
             {
                 return NotFound();
             }
 
-            return View(userProfile);
+            return View(profile);
         }
 
         // POST: UserProfiles/Delete/5
@@ -143,15 +142,13 @@ namespace PraiseProvisions.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var userProfile = await _context.UserProfiles.FindAsync(id);
-            _context.UserProfiles.Remove(userProfile);
-            await _context.SaveChangesAsync();
+            await _profiles.DeleteUserProfile(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserProfileExists(int id)
         {
-            return _context.UserProfiles.Any(e => e.ID == id);
+            return _profiles.GetUserProfile(id) != null;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PraiseProvisions.Models.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using PraiseProvisions.Data;
+using PraiseProvisions.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +10,40 @@ namespace PraiseProvisions.Models.Services
 {
     public class RestaurantServices : IRestaurant
     {
-        public Task CreateRestaurant(Restaurant restaurant)
+        private PraiseProvisionDbContext _context;
+
+        public RestaurantServices(PraiseProvisionDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task DeleteRestaurant(int ID)
+        public async Task CreateRestaurant(Restaurant restaurant)
         {
-            throw new NotImplementedException();
+            _context.Restaurant.CreateRestaurant(restaurant);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<Restaurant> GetRestaurant(int? ID)
+        public async Task DeleteRestaurant(int ID)
         {
-            throw new NotImplementedException();
+            Restaurant restaurant = await GetRestaurant(id);
+            _context.Restaurants.DeleteRestaurant(restaurant);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<List<Restaurant>> GetRestaurants()
+        public async Task<Restaurant> GetRestaurant(int? ID)
         {
-            throw new NotImplementedException();
+            return await _context.Restaurants.FirstOrDefaultAsync(x => x.ID == id);
+        }
+
+        public async Task<List<Restaurant>> GetRestaurants()
+        {
+            return await _context.Restaurants.ToListAsync();
         }
 
         public Task UpdateRestaurant(Restaurant restaurant)
         {
-            throw new NotImplementedException();
+            _context.Restaurants.Update(restaurant);
+            await _context.SaveChangesAsync();
         }
     }
 }
