@@ -7,22 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PraiseProvisions.Data;
 using PraiseProvisions.Models;
+using PraiseProvisions.Models.Interfaces;
 
 namespace PraiseProvisions.Controllers
 {
     public class RestaurantsController : Controller
     {
-        private readonly PraiseProvisionDbContext _context;
+        private readonly IRestaurant _restaurants;
 
-        public RestaurantsController(PraiseProvisionDbContext context)
+        public RestaurantsController(IRestaurant context)
         {
-            _context = context;
+            _restaurants = context;
         }
 
         // GET: Restaurants
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Restaurants.ToListAsync());
+            return View(await _restaurants.GetRestaurants());
         }
 
         // GET: Restaurants/Details/5
@@ -33,8 +34,8 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var restaurant = await _context.Restaurants
-                .FirstOrDefaultAsync(m => m.ID == id);
+            // create new reference to the existing restaurant in the database
+            Restaurant restaurant = await _restaurants.GetRestaurant(id);
             if (restaurant == null)
             {
                 return NotFound();
@@ -58,8 +59,8 @@ namespace PraiseProvisions.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(restaurant);
-                await _context.SaveChangesAsync();
+                // Create the restaurant through dependency service
+                await _restaurants.CreateRestaurant(restaurant);
                 return RedirectToAction(nameof(Index));
             }
             return View(restaurant);
@@ -73,7 +74,7 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var restaurant = await _context.Restaurants.FindAsync(id);
+            var restaurant = await _restaurants.GetRestaurant(id);
             if (restaurant == null)
             {
                 return NotFound();
@@ -97,8 +98,7 @@ namespace PraiseProvisions.Controllers
             {
                 try
                 {
-                    _context.Update(restaurant);
-                    await _context.SaveChangesAsync();
+                    await _restaurants.UpdateRestaurant(restaurant);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,8 +124,8 @@ namespace PraiseProvisions.Controllers
                 return NotFound();
             }
 
-            var restaurant = await _context.Restaurants
-                .FirstOrDefaultAsync(m => m.ID == id);
+            Restaurant restaurant = await _restaurants.GetRestaurant(id);
+
             if (restaurant == null)
             {
                 return NotFound();
@@ -139,15 +139,13 @@ namespace PraiseProvisions.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var restaurant = await _context.Restaurants.FindAsync(id);
-            _context.Restaurants.Remove(restaurant);
-            await _context.SaveChangesAsync();
+            await _restaurants.DeleteRestaurant(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool RestaurantExists(int id)
         {
-            return _context.Restaurants.Any(e => e.ID == id);
+            return _restaurants.GetRestaurant(id) != null;
         }
     }
 }

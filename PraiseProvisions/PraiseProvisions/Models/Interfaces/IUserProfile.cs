@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PraiseProvisions.Models.Interfaces
 {
-    interface IUserProfile
+    public interface IUserProfile
     {
         //Create
         Task CreateUserProfile(UserProfile profile);

@@ -1,4 +1,6 @@
-﻿using PraiseProvisions.Models.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using PraiseProvisions.Data;
+using PraiseProvisions.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +10,40 @@ namespace PraiseProvisions.Models.Services
 {
     public class UserProfileServices : IUserProfile
     {
-        public Task CreateUserProfile(UserProfile profile)
+        private PraiseProvisionDbContext _context;
+
+        public UserProfileServices(PraiseProvisionDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task DeleteUserProfile(int ID)
+        public async Task CreateUserProfile(UserProfile profile)
         {
-            throw new NotImplementedException();
+            _context.UserProfiles.Add(profile);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<UserProfile> GetUserProfile(int? ID)
+        public async Task DeleteUserProfile(int ID)
         {
-            throw new NotImplementedException();
+            UserProfile profile = await GetUserProfile(ID);
+            _context.UserProfiles.Remove(profile);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<List<UserProfile>> GetUserProfiles()
+        public async Task<UserProfile> GetUserProfile(int? id)
         {
-            throw new NotImplementedException();
+            return await _context.UserProfiles.FirstOrDefaultAsync(x => x.ID == id);
         }
 
-        public Task UpdateUserProfile(UserProfile profile)
+        public async Task<List<UserProfile>> GetUserProfiles()
         {
-            throw new NotImplementedException();
+            return await _context.UserProfiles.ToListAsync();
+        }
+
+        public async Task UpdateUserProfile(UserProfile profile)
+        {
+            _context.UserProfiles.Update(profile);
+            await _context.SaveChangesAsync();
         }
     }
 }
