@@ -1,29 +1,34 @@
 ﻿<head>
     <link rel="stylesheet" href="StyleSheet.css" />
-    <link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body>
     <div class="index-main">
-        <h1 class="banner-heading">
-            PRAISE + PROVISIONS
-        </h1>
+        <header>
+            <h1 class="banner-heading">
+                PRAISE + PROVISIONS
+            </h1>
+        </header>
 
         <div class="nav">
+<<<<<<< HEAD
             <h2><a href="/UserFavorites">MYh2 RESTAURANTS</a></h2>
+=======
+            <h2><a href="@Url.Action("Index", "Home")">HOME</a></h2>
+            <h2><a href="@Url.Action("Create", "UserProfiles")">MY RESTAURANTS</a></h2>
+>>>>>>> 60d4c13d2be5372b19fd177f8d717ec2f31ebe48
             <h2><a href="/AboutUs">ABOUT US</a></h2>
         </div>
         <h3>
             -enter a city-
         </h3>
 
-        <form method="POST">
-            <br />
-            <input type="text" maxlength="30"/>
-            <br />
-            <button type="submit">SEARCH</button>
-            <br />
+        <form class="example" method="POST">
+            <input class="searchBar" type="text" maxlength="30" placeholder="Search ..." />
+            <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 </body>
