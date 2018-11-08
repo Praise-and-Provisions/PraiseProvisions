@@ -8,5 +8,11 @@ namespace PraiseProvisions.Controllers
         {
             return View();
         }
+
+        public IActionResult UserIndex(int userID)
+        {
+            ViewData["userId"] = userID;
+            return View("Views/Home/Index.cshtml");
+        }
     }
 }
