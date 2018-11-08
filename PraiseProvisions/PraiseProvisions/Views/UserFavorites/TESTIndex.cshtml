@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PraiseProvisions.Models.Restaurant>
+@{
+    Layout = "_Layout";
+
+}
+
+<body>
+    This is the view for getting specific user favorites.
+    @foreach (var item in Model) {
+        <p>@item.Name</p>
+
+    }
+</body>
