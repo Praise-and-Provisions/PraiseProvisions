@@ -119,7 +119,7 @@ h3 {
 
 .searchButton {
     width: 20%;
-    height: 45px;
+    height: 67px;
     padding: 10px;
     background: #ff0800;
     color: white;
@@ -143,6 +143,7 @@ form.example::after {
 }
 
 form.example {
+    display: flex;
     width: 40%;
     margin: 0 auto;
 }
