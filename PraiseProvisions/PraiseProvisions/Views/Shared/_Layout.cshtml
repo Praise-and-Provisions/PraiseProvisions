@@ -4,15 +4,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <partial name="_Stylesheets.cshtml" />
 </head>
 <body>
-    <nav>
-        <a href="/Home">Home</a>
-        <a href="/UserProfiles">Profile</a>
-        <a href="/Chefs/chef">Chefs</a>
-    </nav>
-    <div>
-        @RenderBody()
+    <div class="index-main">
+        <header>
+            <h1 class="banner-heading">
+                PRAISE + PROVISIONS
+            </h1>
+        </header>
+
+        <div class="nav">
+            <h2><a href="@Url.Action("Index", "Home")">HOME</a></h2>
+            <h2><a href="/UserFavorites">MY RESTAURANTS</a></h2>
+            <h2><a href="@Url.Action("Index", "AboutUs")">ABOUT US</a></h2>
+        </div>
     </div>
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
