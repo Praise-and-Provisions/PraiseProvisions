@@ -34,6 +34,10 @@ a {
     width: 100%;
 }
 
+div.nav h2 {
+    color: white;
+}
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     color: #ff0800;
@@ -52,6 +56,7 @@ h3 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 22px;
 }
+
 
 .index-main {
     text-align: center;
@@ -158,9 +163,9 @@ form.example {
     justify-content: space-between;
     background-color: #282f32;
     margin-bottom: 30px;
-    width: 65%;
-    height: 210px;
-    color: #ff0800;
+    width: 70%;
+    height: 220px;
+    color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
@@ -187,6 +192,7 @@ form.example {
 .resultSingle {
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
+
 #addToFav {
     width: 20%;
     height: 67px;
@@ -199,3 +205,78 @@ form.example {
     border: 2px solid black;
 }
 
+.chefDetails {
+    display: flex; 
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.restDetails {
+    text-align:center;
+}
+
+.mButton {
+    width: 100px;
+    margin-bottom: 10px;
+    background: #ff0800;
+    color: white;
+    border: 2px solid #ff0800;
+}
+
+.favDesc {
+    display: flex;
+    justify-content: center;
+    background-color: #ff0800;
+    color: white;
+    border: 2px solid black;
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 25px;  
+}
+
+.favDescH {
+    text-align: center;
+    font-size: 70px;
+    color: red;
+}
+
+.center {
+    text-align: center !important;
+    font-size: 50px;
+    color: #ff0800;
+}
+
+.mainProf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 300px;
+    width: 40%;
+    margin: 0 auto;
+    border: 2px solid #ff0800;
+}
+
+.widthBtn {
+    width: 200px;
+    background-color: #ff0800;
+    height: 50px;
+    color: white;
+    border: 2px solid #ff0800;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.labelName {
+    font-size: 30px;
+    color: red;
+}
+
+.profBar {
+    width: 300px;
+    height: 50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
