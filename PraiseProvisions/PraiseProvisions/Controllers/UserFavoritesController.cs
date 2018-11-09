@@ -20,13 +20,7 @@ namespace PraiseProvisions.Controllers
         }
 
         // GET: UserFavorites
-        public async Task<IActionResult> Index()
-        {
-            var praiseProvisionDbContext = _context.UserFavorites.Include(u => u.Restaurant).Include(u => u.UserProfile);
-            return View(await praiseProvisionDbContext.ToListAsync());
-        }
-
-        public async Task<IActionResult> TESTIndex(int id)
+        public async Task<IActionResult> Index(int id)
         {
             var test = await _context.UserFavorites
                 .Include(p => p.UserProfile)
