@@ -35,6 +35,11 @@ namespace PraiseProvisions.Models.Services
             return await _context.UserProfiles.FirstOrDefaultAsync(x => x.ID == id);
         }
 
+        public async Task<UserProfile> GetUserProfile(string fullName)
+        {
+            return await _context.UserProfiles.FirstOrDefaultAsync(x => x.fullName == fullName);
+        }
+
         public async Task<List<UserProfile>> GetUserProfiles()
         {
             return await _context.UserProfiles.ToListAsync();

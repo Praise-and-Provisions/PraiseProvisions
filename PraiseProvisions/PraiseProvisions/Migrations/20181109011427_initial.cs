@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PraiseProvisions.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,9 @@ namespace PraiseProvisions.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Address = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,7 +28,7 @@ namespace PraiseProvisions.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    fullName = table.Column<string>(nullable: true)
+                    fullName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,6 +58,40 @@ namespace PraiseProvisions.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Restaurants",
+                columns: new[] { "ID", "Address", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "1234 Fake St. Seattle, WA 98122", "Brian's delicious comfort food, the dumplings are A+!", "Dough Zone" },
+                    { 2, "1234 Fake St. Seattle, WA 98122", "Top fried chicken in Seattle according to Jeff Weng!", "Karaage Setsuna" },
+                    { 3, "1234 Fake St. Seattle, WA 98122", "ALL YOU CAN EAT MEAT. ALL DAY, EVERYDAY.", "Novilho's Brazilian Steakhouse" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserProfiles",
+                columns: new[] { "ID", "fullName" },
+                values: new object[,]
+                {
+                    { 1, "Jimmy Nguyen" },
+                    { 2, "Brian Nelson" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserFavorites",
+                columns: new[] { "RestaurantID", "UserProfileID" },
+                values: new object[] { 3, 1 });
+
+            migrationBuilder.InsertData(
+                table: "UserFavorites",
+                columns: new[] { "RestaurantID", "UserProfileID" },
+                values: new object[] { 2, 1 });
+
+            migrationBuilder.InsertData(
+                table: "UserFavorites",
+                columns: new[] { "RestaurantID", "UserProfileID" },
+                values: new object[] { 1, 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserFavorites_UserProfileID",
