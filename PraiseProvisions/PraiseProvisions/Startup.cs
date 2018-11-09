@@ -28,7 +28,7 @@ namespace PraiseProvisions
             services.AddMvc();
             services.AddDbContext<PraiseProvisionDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("ProductionDB"));
             });
 
             services.AddTransient<IRestaurant, RestaurantServices>();
