@@ -30,7 +30,7 @@
                 restFaves.UserID = Model.UserID;
             }*@
                     <form method="POST">
-                        <button asp-controller="AddFavorite" asp-action="Index" asp-route-id="@Model.UserID" asp-route-firstName="@item.firstName" asp-route-lastName="@item.lastName" asp-route-restaurantName="@item.restaurantName" asp-route-address="@item.address" asp-route-description="@item.description" asp-route-city="@item.city" asp-route-review="@item.review" type="submit">Add Restaurant</button>
+                        <button asp-controller="AddFavorite" asp-action="Index" asp-route-id="@Model.UserID" asp-route-firstName="@item.firstName" asp-route-lastName="@item.lastName" asp-route-restaurantName="@item.restaurantName" asp-route-address="@item.address" asp-route-description="@item.description" asp-route-review="@item.review" type="submit">Add Restaurant</button>
                     </form>
                     @*<a asp-controller="AddFavorite" asp-action="Index" route-results="@restFaves">ADD RESTAURANT</a>*@
                 </div>

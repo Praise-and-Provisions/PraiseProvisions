@@ -27,7 +27,7 @@ namespace PraiseProvisions.Controllers
         //}
 
         [HttpPost]
-        public async Task<IActionResult> Index(int id, string firstName, string lastName, string restaurantName, string address, string description, string city, string review)
+        public async Task<IActionResult> Index(int id, string firstName, string lastName, string restaurantName, string address, string description, string review)
         {
             Restaurant restaurantAdded = new Restaurant
             {
