@@ -64,7 +64,7 @@ h3 {
 
 .img-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
 }
 
@@ -89,8 +89,8 @@ h3 {
 }
 
 .about {
-    width: 200px;
-    max-height: 200px;
+    width: 10em;
+    max-height: 10em;
     object-fit: cover;
     border-radius: 50%;
 }
