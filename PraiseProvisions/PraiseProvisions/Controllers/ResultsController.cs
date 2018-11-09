@@ -75,7 +75,8 @@ namespace PraiseProvisions.Controllers
                             {
                                 restaurantName = rawYelpRecommendations.ElementAt(index).Name,
                                 description = rawYelpRecommendations.ElementAt(index).Categories[0].Title,
-                                address = rawYelpRecommendations.ElementAt(index).Location.Address1
+                                address = rawYelpRecommendations.ElementAt(index).Location.Address1,
+                                restaurantImage = rawYelpRecommendations.ElementAt(index).ImageUrl
                             };
                             combinedResults.Add(yelpRest);
                             count++;

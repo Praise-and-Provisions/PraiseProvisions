@@ -7,32 +7,47 @@
 <div class="resultsBody">
     @foreach (var item in Model.ResultsList)
     {
-        <div class="thumbnail">
-            <div class="restImg">
-                <img src="~/food.jpg"/>
-            </div>
-            <div class="restDetails">
-                <p>
-                Name: @item.restaurantName
-                </p>
-                <p>
-                Address: @item.address
-                </p>
+        //@if(item.review != null)
+            <div class="thumbnail">
+                <div class="restImg">
+                    <img src="@item.restaurantImage"/>
+                </div>
+                <div class="restDetails">
+                    <p>
+                        @item.restaurantName
+                    </p>
+                    <p>
+                        @item.description
+                    </p>
+                    <p>
+                        @item.address
+                    </p>
 
-                @*@{ 
+                    @*@{
 
-                    PraiseProvisions.Models.ViewModel.RestaurantFavoritesVM restFaves = new PraiseProvisions.Models.ViewModel.RestaurantFavoritesVM();
-                    restFaves.Results = item;
-                    restFaves.UserID = Model.UserID;
-                }*@
-                <form method="POST">                  
-                    <button asp-controller="AddFavorite" asp-action="Index" asp-route-id="@Model.UserID" asp-route-firstName="@item.firstName" asp-route-lastName="@item.lastName" asp-route-restaurantName="@item.restaurantName" asp-route-address="@item.address" asp-route-description="@item.description" asp-route-city="@item.city" asp-route-review="@item.review" type="submit">Add Restaurant</button>
-                </form>
-                @*<a asp-controller="AddFavorite" asp-action="Index" route-results="@restFaves">ADD RESTAURANT</a>*@
+                PraiseProvisions.Models.ViewModel.RestaurantFavoritesVM restFaves = new PraiseProvisions.Models.ViewModel.RestaurantFavoritesVM();
+                restFaves.Results = item;
+                restFaves.UserID = Model.UserID;
+            }*@
+                    <form method="POST">
+                        <button asp-controller="AddFavorite" asp-action="Index" asp-route-id="@Model.UserID" asp-route-firstName="@item.firstName" asp-route-lastName="@item.lastName" asp-route-restaurantName="@item.restaurantName" asp-route-address="@item.address" asp-route-description="@item.description" asp-route-city="@item.city" asp-route-review="@item.review" type="submit">Add Restaurant</button>
+                    </form>
+                    @*<a asp-controller="AddFavorite" asp-action="Index" route-results="@restFaves">ADD RESTAURANT</a>*@
+                </div>
+                <div class="chefImage">
+                    @if (item.chefImage != null)
+                    {
+                      <img src="@item.chefImage" />
+                    }
+
+                </div>
+                <div>
+                    @if (item.review != null)
+                    {
+                    <p>@item.firstName @item.lastName says:</p>
+                    <P>@item.review</P> 
+                    }
+                </div>
             </div>
-            <div class="chefImage">
-                <img src="~/ramsay.png"/>
-            </div>
-        </div>
     }
 </div>
