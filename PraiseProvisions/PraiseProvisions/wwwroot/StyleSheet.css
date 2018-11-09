@@ -103,6 +103,8 @@ h3 {
     margin: 0 auto;
     background-color: rgb(193, 197, 204);
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.4em;
 }
 
 .search-container{
