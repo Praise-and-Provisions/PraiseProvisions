@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PraiseProvisions.Models;
 using PraiseProvisions.Models.Interfaces;
+using System.Linq;
+using System;
 
 namespace PraiseProvisions.Controllers
 {
@@ -54,11 +56,12 @@ namespace PraiseProvisions.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID, fullName")] UserProfile profile)
         {
+            //var returnUser = await _profiles.GetUserProfile(profile.fullName);
+            
             if (ModelState.IsValid)
-            {
-                // Create the user profile through dependency service
+            {                                       
                 await _profiles.CreateUserProfile(profile);
-                return RedirectToAction("UserIndex", "Home", new { userID = profile.ID });
+                return RedirectToAction("UserIndex", "Home", new { userID = profile.ID });              
             }
             return View(profile);
         }

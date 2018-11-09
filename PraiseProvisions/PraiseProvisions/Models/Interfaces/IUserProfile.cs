@@ -16,6 +16,7 @@ namespace PraiseProvisions.Models.Interfaces
 
         //Reading
         Task<List<UserProfile>> GetUserProfiles(); //gets all profiles
-        Task<UserProfile> GetUserProfile(int? ID); //gets a single profile
+        Task<UserProfile> GetUserProfile(int? ID); //gets a single profile by ID
+        Task<UserProfile> GetUserProfile(string fullName); //gets a single profile by name
     }
 }
