@@ -9,8 +9,8 @@ using PraiseProvisions.Data;
 namespace PraiseProvisions.Migrations
 {
     [DbContext(typeof(PraiseProvisionDbContext))]
-    [Migration("20181108185053_Seeding")]
-    partial class Seeding
+    [Migration("20181109011427_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
