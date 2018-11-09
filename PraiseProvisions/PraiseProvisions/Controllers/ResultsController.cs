@@ -21,7 +21,6 @@ namespace PraiseProvisions.Controllers
             {
                 try
                 {
-                    //string tempCity = "seattle";//hard coded, will replace with text box input
                     chefClient.BaseAddress = new Uri("https://praiseapi.azurewebsites.net");
                     var response = await chefClient.GetAsync($"/api/recommendations");
                     response.EnsureSuccessStatusCode();
@@ -33,7 +32,7 @@ namespace PraiseProvisions.Controllers
 
                     var yelpRequest = new Yelp.Api.Models.SearchRequest();
                     yelpRequest.Term = "restaurants";
-                    yelpRequest.Location = search.ToLower();//hard coded, will replace with text box input
+                    yelpRequest.Location = search.ToLower();
                     yelpRequest.MaxResults = 50;
 
                     var yelpClient = new Yelp.Api.Client("e0ZfT6muy7b6ZDYXAJVWjIx_oM4eCQSxVxaFGhjJSrLfHRoEX6XgUExr7DCGufP-WTImBXy150jg5eC12i5l2nVcLl5RvmZbck26hv6a_BpIvEhfOZc0YEfFPTfjW3Yx");
