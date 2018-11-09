@@ -56,14 +56,21 @@ namespace PraiseProvisions.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID, fullName")] UserProfile profile)
         {
-            //var returnUser = await _profiles.GetUserProfile(profile.fullName);
-            
-            if (ModelState.IsValid)
-            {                                       
-                await _profiles.CreateUserProfile(profile);
-                return RedirectToAction("UserIndex", "Home", new { userID = profile.ID });              
+            var returnUser = await _profiles.GetUserProfile(profile.fullName);
+
+            if (returnUser != null)
+            {
+                return RedirectToAction("UserIndex", "Home", profile.ID);
             }
-            return View(profile);
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    await _profiles.CreateUserProfile(profile);
+                    return RedirectToAction("UserIndex", "Home", new { userID = profile.ID });
+                }
+            }
+            return RedirectToAction("UserProfiles", "Create");
         }
 
         // GET: UserProfiles/Edit/5
