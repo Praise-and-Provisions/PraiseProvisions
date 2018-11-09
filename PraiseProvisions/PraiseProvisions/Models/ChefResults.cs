@@ -31,5 +31,11 @@ namespace PraiseProvisions.Models
 
         [JsonProperty("review")]
         public string review { get; set; }
+
+        [JsonProperty("chefImage")]
+        public string chefImage { get; set; }
+
+        [JsonProperty("restaurantImage")]
+        public string restaurantImage { get; set; }
     }
 }
