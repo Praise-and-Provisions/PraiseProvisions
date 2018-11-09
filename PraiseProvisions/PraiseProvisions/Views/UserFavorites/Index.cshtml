@@ -5,10 +5,11 @@
 }
 
 <body>
-    This is the view for getting specific user favorites.
+    <h2 class="favDescH">Favorites</h2>
     @foreach (var item in Model)
     {
-        <p>@item.Name</p>
-
+        <div class="favDesc">
+            <p>@item.Name</p>
+        </div>
     }
 </body>
