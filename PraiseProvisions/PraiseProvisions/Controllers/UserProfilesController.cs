@@ -60,7 +60,7 @@ namespace PraiseProvisions.Controllers
 
             if (returnUser != null)
             {
-                return RedirectToAction("UserIndex", "Home", profile.ID);
+                return RedirectToAction("UserIndex", "Home", returnUser.ID);
             }
             else
             {
