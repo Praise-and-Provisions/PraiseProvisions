@@ -236,7 +236,8 @@ form.example {
     font-size: 25px;  
 }
 
-.favDescH {
+.main-heading {
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     font-size: 70px;
     color: red;
