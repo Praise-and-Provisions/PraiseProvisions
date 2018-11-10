@@ -10,7 +10,7 @@ namespace PraiseProvisions.Models
     {
         public int ID { get; set; }
         [Required]
-        [Display(Name = "Full Name")]
+        [Display(Name = "")]
         public string fullName { get; set; }
 
         public ICollection<UserFavorite> UserFavorites { get; set; }
