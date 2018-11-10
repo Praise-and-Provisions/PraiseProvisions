@@ -251,13 +251,16 @@ form.example {
 
 .mainProf {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    background-color: black;
-    height: 300px;
-    width: 40%;
-    margin: 0 auto;
-    border: 2px solid #ff0800;
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: 400px;
+    width: 420px;
+    margin: 30px auto;
+    border: 1px solid #ff0800;
+    border-radius: 5px;
 }
 
 .widthBtn {
@@ -276,8 +279,12 @@ form.example {
 }
 
 .profBar {
-    width: 300px;
-    height: 50px;
-    margin-left: 20px;
+    padding: 10px;
+    font-size: 17px;
+    height: 45px;
+    border: 1px solid #ff0800;
+    width: 80%;
+    background: #f1f1f1;
+    border-radius: 5px;
     margin-bottom: 30px;
 }
