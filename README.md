@@ -27,3 +27,9 @@ We worked on project tasks by itemizing “to-dos” on the VSTS project managem
 ## GIT PROCESS
 
 Our Git Flow required each team member to check out new branches daily. In order to avoid any merge conflicts, our team worked on beta branches before merging to master and clearly communicate once a pull request has been merged. Everyone will pull master immediately following this. We required one or two individuals to review a PR. The PRs were merged by someone other than the individual or group that wrote the code. We merged frequently. Throughout project week, we sat either together, or within close proximity to each other for ease of communication.  
+
+## SAMPLE OF WEB APP
+
+## WEBAPP DATABASE SCHEMA
+
+![PP-WebApp-Schema](https://github.com/Praise-and-Provisions/PraiseProvisions/blob/master/WebAppSchema%20(1).png)
