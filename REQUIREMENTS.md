@@ -28,7 +28,7 @@ _Startup File_
 * DBContext registered in ConfigureServices
 * Use of static files accepted
 
-### Visual Praise + Provisions Web App
-_Priase + Provisions_ 
+### Visual PRAISE + PROVISIONS, A CURATED RESTAURANT APP
+_PRIASE + PROVISIONS LANDING PAGE_**  
 
 
