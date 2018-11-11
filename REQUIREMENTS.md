@@ -7,10 +7,10 @@ This is an educational midterm project that focuses on a culmination of 4 weeks 
 </br>
 
 ## Vision
-_What is the vision of this product?_
+_What is the vision of this product?_ </br>
 The vision of this product is that as a user I want to search for top restaurant listings based on a city that I specify so that I can be informed on the best restaurants that that city has to offer. I want a curated experience that most applications haven't been able to deliver. As a user I want to be able to create a logn in, view results of my search and save restaurant recommendations to a list.  
 
-_What painpoints does this product solve?_
+_What painpoints does this product solve?_ </br>
 As a user I want the curated experience to include celelbrity chef and/or noteworthy culinary expert restaurant recommendations. I don't want to have to search multiple sites to compare and compile this information for my culinary adventures. 
 
 ### Scope
@@ -45,7 +45,8 @@ _Startup File_
 * DBContext registered in ConfigureServices
 * Use of static files accepted
 
-### Visual PRAISE + PROVISIONS, A CURATED RESTAURANT APP
+### VISUALS
+### PRAISE + PROVISIONS, A CURATED RESTAURANT APP
 #### The visuals below will walk you through the intentional design flow of the webb application
 **PRAISE + PROVISIONS _Welcome Landing Page_**
 + To curate the experience the app is intentionally desinged to bring the user directly to the login page</br>
