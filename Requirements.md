@@ -25,7 +25,7 @@ _Startup File_
 * DBContext registered in ConfigureServices
 * Use of static files accepted
 
-### Visual
+### Visual Praise + Provisions Web App
 _Priase + Provisions_ 
-![asyncinndbschema](https://user-images.githubusercontent.com/39015829/47542663-425d4100-d893-11e8-97ec-e747d1ef239f.jpg)
+
 
