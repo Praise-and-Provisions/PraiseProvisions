@@ -29,6 +29,6 @@ _Startup File_
 * Use of static files accepted
 
 ### Visual PRAISE + PROVISIONS, A CURATED RESTAURANT APP
-_PRIASE + PROVISIONS LANDING PAGE_**  
+**__PRIASE + PROVISIONS LANDING PAGE__**
 
 
