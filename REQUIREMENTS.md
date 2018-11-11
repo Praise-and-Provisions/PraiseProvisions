@@ -1,6 +1,6 @@
 # REQUIREMENTS
 
-## .NET C# Educational Midterm Project - Praise + Provisions
+## .NET C# Educational Midterm Project - [PRAISE + PROVISIONS, A CURATED RESTAURANT APP](https://praiseprovisions.azurewebsites.net/) </br>
 This is an educational midterm project that focuses on a culmination of 4 weeks of instruction building a full stack web application using MVC and API with full CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) operations. The project scope must incude a custum API. Use of a third party API can be used in addition to the custom API however it is not required.</br>
 .NET Core, Visual Studio Team Services now known as Azure DevOps
 </br>
