@@ -30,6 +30,15 @@ Our Git Flow required each team member to check out new branches daily. In order
 
 ## SAMPLE OF WEB APP
 
+
+
 ## WEBAPP DATABASE SCHEMA
 
+There are two tables and one join table. The Profile table contains all of the user profiles and their properties while the Restaurants table contains the same for restaurants. The join table represents the many to many relationship between the two tables.
+
 ![PP-WebApp-Schema](https://github.com/Praise-and-Provisions/PraiseProvisions/blob/master/WebAppSchema%20(1).png)
+
+## TOOLS USED
+
+.NET Core, Visual Studio Team Services, Azure DevOps 
+
