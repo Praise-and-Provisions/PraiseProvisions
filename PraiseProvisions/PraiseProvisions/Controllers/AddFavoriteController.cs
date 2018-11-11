@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace PraiseProvisions.Controllers
 {
-    //[Route("[controller]")]
     public class AddFavoriteController : Controller 
     {
         private readonly PraiseProvisionDbContext _context;
@@ -20,11 +19,6 @@ namespace PraiseProvisions.Controllers
 
             _context = context;
         }
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
 
         [HttpPost]
         public async Task<IActionResult> Index(int id, string firstName, string lastName, string restaurantName, string address, string description, string review)

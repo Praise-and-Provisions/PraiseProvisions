@@ -11,9 +11,6 @@ namespace PraiseProvisions.Models.Interfaces
         //Updating
         Task UpdateUserProfile(UserProfile profile);
 
-        //Deleting
-        Task DeleteUserProfile(int ID);
-
         //Reading
         Task<List<UserProfile>> GetUserProfiles(); //gets all profiles
         Task<UserProfile> GetUserProfile(int? ID); //gets a single profile by ID

@@ -11,7 +11,6 @@ using Yelp;
 
 namespace PraiseProvisions.Controllers
 {
-    [Route("[controller]")]
     public class ResultsController : Controller
     {
         [HttpPost]

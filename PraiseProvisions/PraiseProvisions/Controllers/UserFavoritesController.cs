@@ -67,8 +67,6 @@ namespace PraiseProvisions.Controllers
         }
 
         // POST: UserFavorites/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserProfileID,RestaurantID")] UserFavorite userFavorite)
@@ -103,8 +101,6 @@ namespace PraiseProvisions.Controllers
         }
 
         // POST: UserFavorites/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("UserProfileID,RestaurantID")] UserFavorite userFavorite)
@@ -137,37 +133,6 @@ namespace PraiseProvisions.Controllers
             ViewData["RestaurantID"] = new SelectList(_context.Restaurants, "ID", "ID", userFavorite.RestaurantID);
             ViewData["UserProfileID"] = new SelectList(_context.UserProfiles, "ID", "ID", userFavorite.UserProfileID);
             return View(userFavorite);
-        }
-
-        // GET: UserFavorites/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var userFavorite = await _context.UserFavorites
-                .Include(u => u.Restaurant)
-                .Include(u => u.UserProfile)
-                .FirstOrDefaultAsync(m => m.RestaurantID == id);
-            if (userFavorite == null)
-            {
-                return NotFound();
-            }
-
-            return View(userFavorite);
-        }
-
-        // POST: UserFavorites/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var userFavorite = await _context.UserFavorites.FindAsync(id);
-            _context.UserFavorites.Remove(userFavorite);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool UserFavoriteExists(int id)

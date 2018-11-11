@@ -31,7 +31,6 @@ namespace PraiseProvisions
                 options.UseSqlServer(Configuration.GetConnectionString("ProductionDB"));
             });
 
-            services.AddTransient<IRestaurant, RestaurantServices>();
             services.AddTransient<IUserProfile, UserProfileServices>();
         }
 

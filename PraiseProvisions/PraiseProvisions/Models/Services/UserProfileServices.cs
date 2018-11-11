@@ -23,13 +23,6 @@ namespace PraiseProvisions.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserProfile(int ID)
-        {
-            UserProfile profile = await GetUserProfile(ID);
-            _context.UserProfiles.Remove(profile);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task<UserProfile> GetUserProfile(int? id)
         {
             return await _context.UserProfiles.FirstOrDefaultAsync(x => x.ID == id);
