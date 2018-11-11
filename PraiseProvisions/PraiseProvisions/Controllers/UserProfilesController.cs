@@ -18,7 +18,6 @@ namespace PraiseProvisions.Controllers
         }
 
         // GET: UserProfiles
-     
         public async Task<IActionResult> Index()
         {
             return View(await _profiles.GetUserProfiles());
