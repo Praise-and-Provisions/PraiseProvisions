@@ -1,6 +1,7 @@
 # PRAISE + PROVISIONS
 
 401 Midterm project by Tre Cain, Jamilah McWilliams, Jimmy Nguyen, Brian Nelson, Christina Gislason
+
 Project: Praise + Provisions
 
 ## DESCRIPTION 
