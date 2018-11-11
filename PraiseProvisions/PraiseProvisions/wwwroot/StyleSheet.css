@@ -103,6 +103,17 @@ h3 {
     padding: 5px;
 }
 
+.thumbnail .chefImage img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.chefImage {
+    display: flex;
+    align-items: center;
+}
+
 .blurb {
     padding: 50px;
     margin: 0 auto;
@@ -165,11 +176,15 @@ form.example {
     height: 220px;
     color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9em;
 }
 
 .thumbnail img {
     width: 210px;
     height: 100%;
+    border-radius: 8px;
 }
 
 .restDetails {
@@ -177,6 +192,9 @@ form.example {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    text-align: center;
+    padding: 10px;
+    flex: 1 0 30%;
 }
 
 .resultsBody {
@@ -208,10 +226,7 @@ form.example {
     justify-content:center;
     flex-direction: column;
     text-align: center;
-}
-
-.restDetails {
-    text-align:center;
+    padding: 10px;
 }
 
 .mButton {
