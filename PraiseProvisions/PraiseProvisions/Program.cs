@@ -17,6 +17,11 @@ namespace PraiseProvisions
             CreateWebHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// Creates WebHost Builder, tells the server to use the startup file
+        /// </summary>
+        /// <param name="args">Arguments</param>
+        /// <returns>Returns the WebHost builder</returns>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();

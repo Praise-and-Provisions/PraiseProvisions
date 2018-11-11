@@ -21,8 +21,11 @@ namespace PraiseProvisions
         {
             Configuration = configuration;
         }
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+        /// <summary>
+        /// Configures services for use by the server
+        /// </summary>
+        /// <param name="services">Collection of services</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -34,7 +37,11 @@ namespace PraiseProvisions
             services.AddTransient<IUserProfile, UserProfileServices>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Configures the HTTP request pipeline
+        /// </summary>
+        /// <param name="app">Application</param>
+        /// <param name="env">Environment</param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();
