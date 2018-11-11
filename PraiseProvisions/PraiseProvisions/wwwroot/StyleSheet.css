@@ -47,14 +47,9 @@ h1 {
 
 h2 {
     font-family: 'Josefin Sans', sans-serif;
-    color: rgb(203,47,0);
+    color: #ff0800;
     font-weight: 400;
     font-size: 20px;
-}
-
-h3 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 22px;
 }
 
 
@@ -88,11 +83,16 @@ h3 {
 }
 
 h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.3em;
-    color: rgb(203,47,0);
+    color: #ff0800;
     margin-right: 10px;
     padding-bottom: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+}
+
+.fancy-box h3 {
+    margin: 15px 30px;
+    padding: 0;
 }
 
 .about {
@@ -154,8 +154,6 @@ form.example::after {
 
 form.example {
     display: flex;
-    width: 40%;
-    margin: 0 auto;
 }
 
 .thumbnail {
@@ -236,7 +234,8 @@ form.example {
     font-size: 25px;  
 }
 
-.favDescH {
+.main-heading {
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     font-size: 70px;
     color: red;
@@ -248,15 +247,18 @@ form.example {
     color: #ff0800;
 }
 
-.mainProf {
+.fancy-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    background-color: black;
-    height: 300px;
-    width: 40%;
-    margin: 0 auto;
-    border: 2px solid #ff0800;
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: 400px;
+    width: 420px;
+    margin: 30px auto;
+    border: 1px solid #ff0800;
+    border-radius: 5px;
 }
 
 .widthBtn {
@@ -275,8 +277,12 @@ form.example {
 }
 
 .profBar {
-    width: 300px;
-    height: 50px;
-    margin-left: 20px;
+    padding: 10px;
+    font-size: 17px;
+    height: 45px;
+    border: 1px solid #ff0800;
+    width: 80%;
+    background: #f1f1f1;
+    border-radius: 5px;
     margin-bottom: 30px;
 }
