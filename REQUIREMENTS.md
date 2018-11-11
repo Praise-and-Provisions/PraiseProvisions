@@ -32,7 +32,7 @@ _Scope Out_
 
 #### Stretch
 + Login persistence 
-+ Increased amount of curated results by city
++ Increased amount of curated chef recommended results by city
 
 ## Functional Requirements
 
@@ -44,6 +44,37 @@ _Startup File_
 * MVC dependency in ConfigureServices
 * DBContext registered in ConfigureServices
 * Use of static files accepted
+
+### PLANNING PROCESS VISUALS
+### PRAISE + PROVISIONS, A CURATED RESTAURANT APP - THE PLANNING PROCESS
+#### The following visuals demonstrate the planning process of the web application page organization 
+_Landing Page_ 
++ The original concept had the landing page as the search page
+
+![landing_page](https://user-images.githubusercontent.com/39015829/48317163-0b7d6f80-e5a3-11e8-97b8-b9d066b5da11.PNG)
+
+_Dashboard/Saved Results Page_ 
+
+![mydash](https://user-images.githubusercontent.com/39015829/48317206-7d55b900-e5a3-11e8-8203-f8c06d0bb77a.PNG)
+
+_Results Page First Draft_
+
++ The initial concept was to have the curated chef recommendations from a custom API separate from the third party results
+
+![chefs page](https://user-images.githubusercontent.com/39015829/48317236-d0c80700-e5a3-11e8-968f-55f7a9a345cb.PNG)
+
+_Revised Results Draft_
+
++ The revised concept would lead us to the final results which was a combined results page of our custum and third party API
+
+
+![top_chefs](https://user-images.githubusercontent.com/39015829/48317252-1a185680-e5a4-11e8-9a37-61d0bf8e39da.PNG)
+
+_About Us First Draft_
+
++ Initially our about us page was stacked with each of us having a descriptive summary. This was later revised to a group summary inclusive of a photo of our favorite dish.
+
+![about us](https://user-images.githubusercontent.com/39015829/48317280-6b284a80-e5a4-11e8-8d34-0ba6289df48f.PNG) 
 
 ### VISUALS
 ### PRAISE + PROVISIONS, A CURATED RESTAURANT APP
@@ -59,3 +90,4 @@ _Startup File_
 + The user is persisted behind the scene and the user is now directed to the search page</br>
 
 ![search page](https://user-images.githubusercontent.com/39015829/48316552-2d262900-e59a-11e8-86fe-410fd4486dd7.jpg)
+
