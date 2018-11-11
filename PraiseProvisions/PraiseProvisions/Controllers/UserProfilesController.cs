@@ -17,13 +17,20 @@ namespace PraiseProvisions.Controllers
             _profiles = context;
         }
 
-        // GET: UserProfiles
+        /// <summary>
+        /// Gets the UserProfiles
+        /// </summary>
+        /// <returns>Returns the Index page</returns>
         public async Task<IActionResult> Index()
         {
             return View(await _profiles.GetUserProfiles());
         }
 
-        // GET: UserProfiles/Details/5
+       /// <summary>
+       /// Gets a UserProfile
+       /// </summary>
+       /// <param name="id">User ID</param>
+       /// <returns>UserProfile Detail view</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,7 +49,10 @@ namespace PraiseProvisions.Controllers
             return View(profile);
         }
 
-        // GET: UserProfiles/Create
+        /// <summary>
+        /// Creates a User ID
+        /// </summary>
+        /// <returns>UserProfile Create view</returns>
         public IActionResult Create()
         {
             return View();

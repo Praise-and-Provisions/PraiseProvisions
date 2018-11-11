@@ -13,6 +13,12 @@ namespace PraiseProvisions.Controllers
 {
     public class ResultsController : Controller
     {
+        /// <summary>
+        /// Creates a list of 10 restaurants based off the search string passed in as a paramater 
+        /// </summary>
+        /// <param name="search">Text from search result</param>
+        /// <param name="userId">ID of current user</param>
+        /// <returns>Returns a Index View of Results</returns>
         [HttpPost]
         public async Task<IActionResult> Index(string search, int userId)
         {

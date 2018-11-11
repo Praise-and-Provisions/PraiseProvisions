@@ -20,6 +20,11 @@ namespace PraiseProvisions.Controllers
         }
 
         // GET: UserFavorites
+        /// <summary>
+        /// Gets user favorites
+        /// </summary>
+        /// <param name="id">user profile id</param>
+        /// <returns>User favorites Index view page</returns>
         public async Task<IActionResult> Index(int id)
         {
             var favorite = await _context.UserFavorites
@@ -36,11 +41,6 @@ namespace PraiseProvisions.Controllers
                    }
                 ).ToListAsync();
             return View(favorite);
-        }
-
-        private bool UserFavoriteExists(int id)
-        {
-            return _context.UserFavorites.Any(e => e.RestaurantID == id);
         }
     }
 }

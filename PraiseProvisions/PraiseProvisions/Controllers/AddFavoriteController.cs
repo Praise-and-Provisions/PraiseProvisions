@@ -19,7 +19,17 @@ namespace PraiseProvisions.Controllers
 
             _context = context;
         }
-
+        /// <summary>
+        /// Adds a restaurant from results page to user profile 
+        /// </summary>
+        /// <param name="id">user profile id</param>
+        /// <param name="firstName">chef first name</param>
+        /// <param name="lastName">chef last name</param>
+        /// <param name="restaurantName">the restaurant name</param>
+        /// <param name="address">restaurant address</param>
+        /// <param name="description">description of restaurant cuisine</param>
+        /// <param name="review">chef review</param>
+        /// <returns>UserFavorites index page</returns>
         [HttpPost]
         public async Task<IActionResult> Index(int id, string firstName, string lastName, string restaurantName, string address, string description, string review)
         {
