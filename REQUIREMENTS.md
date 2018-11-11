@@ -53,4 +53,5 @@ _Startup File_
 ![welcome - web app landing page](https://user-images.githubusercontent.com/39015829/48316137-73788980-e594-11e8-9c7d-5ed8dc3bf250.jpg)
 
 **PRAISE + PROVISIONS _Welcome Landing Page_**
-+ To curate the experience the app is intentionally desinged to bring the user directly to the login page</br>
++ The user is persisted behind the scene and the user is now directed to the search page</br>
+![search page](https://user-images.githubusercontent.com/39015829/48316552-2d262900-e59a-11e8-86fe-410fd4486dd7.jpg)
