@@ -32,15 +32,19 @@ Our Git Flow required each team member to check out new branches daily. In order
 
 #### Login Page
 
-![LoginPage](https://github.com/Praise-and-Provisions/PraiseProvisions/blob/master/LoginPage.JPG)
+![LoginPage](./Assets/LoginPage.JPG)
 
 #### Search Page
 
-![SearchPage](https://github.com/Praise-and-Provisions/PraiseProvisions/blob/master/SearchPage.JPG)
+![SearchPage](./Assets/SearchPage.JPG)
+
+#### Results Page
+
+![ResultsPage](./Assets/ResultsPage.JPG)
 
 #### About Us Page
 
-![AboutUsPage](https://github.com/Praise-and-Provisions/PraiseProvisions/blob/master/AboutUsPage.JPG)
+![AboutUsPage](./Assets/AboutUsPage.JPG)
 
 
 ## WEBAPP DATABASE SCHEMA
