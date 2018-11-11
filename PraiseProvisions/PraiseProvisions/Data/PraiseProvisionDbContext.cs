@@ -14,6 +14,10 @@ namespace PraiseProvisions.Data
 
         }
 
+        /// <summary>
+        /// Seed values loaded into the database, mainly used for testing functionality
+        /// </summary>
+        /// <param name="modelBuilder">The model builder</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserFavorite>().HasKey(uf => new { uf.RestaurantID, uf.UserProfileID });

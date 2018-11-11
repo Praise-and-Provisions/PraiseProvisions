@@ -8,6 +8,10 @@ namespace PraiseProvisions.Controllers
 {
     public class AboutUsController : Controller
     {
+        /// <summary>
+        /// Index page for the About US
+        /// </summary>
+        /// <returns>Returns the Index View</returns>
         public IActionResult Index()
         {
             return View();

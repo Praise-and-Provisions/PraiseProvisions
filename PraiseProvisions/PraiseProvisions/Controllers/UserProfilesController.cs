@@ -17,14 +17,20 @@ namespace PraiseProvisions.Controllers
             _profiles = context;
         }
 
-        // GET: UserProfiles
-     
+        /// <summary>
+        /// Gets the UserProfiles
+        /// </summary>
+        /// <returns>Returns the Index page</returns>
         public async Task<IActionResult> Index()
         {
             return View(await _profiles.GetUserProfiles());
         }
 
-        // GET: UserProfiles/Details/5
+       /// <summary>
+       /// Gets a UserProfile
+       /// </summary>
+       /// <param name="id">User ID</param>
+       /// <returns>UserProfile Detail view</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +49,16 @@ namespace PraiseProvisions.Controllers
             return View(profile);
         }
 
-        // GET: UserProfiles/Create
+        /// <summary>
+        /// Creates a User ID
+        /// </summary>
+        /// <returns>UserProfile Create view</returns>
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: UserProfiles/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID, fullName")] UserProfile profile)
@@ -90,8 +97,6 @@ namespace PraiseProvisions.Controllers
         }
 
         // POST: UserProfiles/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,fullName")] UserProfile profile)
@@ -121,33 +126,6 @@ namespace PraiseProvisions.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(profile);
-        }
-
-        // GET: UserProfiles/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            UserProfile profile = await _profiles.GetUserProfile(id);
-
-            if (profile == null)
-            {
-                return NotFound();
-            }
-
-            return View(profile);
-        }
-
-        // POST: UserProfiles/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _profiles.DeleteUserProfile(id);
-            return RedirectToAction(nameof(Index));
         }
 
         private bool UserProfileExists(int id)
