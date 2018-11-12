@@ -9,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 namespace PraiseProvisionsTest
 {
     public class UnitTest1
-    {
+    {/// <summary>
+    /// Tests getting Chef's first name from Chef Results Model
+    /// </summary>
         [Fact]
         public void CanGetChefNameViaChefResultsModel()
         {
@@ -19,6 +21,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Colonel", chef.firstName);
         }
 
+        /// <summary>
+        /// Tests getting Chef's last name from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetChefLastNameViaChefResultsModel()
         {
@@ -28,6 +33,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Sanders", chef.lastName);
         }
 
+        /// <summary>
+        /// Tests getting restaurant name from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetRestaurantViaChefResultsModel()
         {
@@ -37,6 +45,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("KFC", restaurant.restaurantName);
         }
 
+        /// <summary>
+        /// Tests getting address of Chef recommended restaurant from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetAddressViaChefResultsModel()
         {
@@ -46,6 +57,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("1900 Colonel Sanders Lane, Louiville, KY 40213", addresses.address);
         }
 
+        /// <summary>
+        /// Tests getting description of recommended restaurant from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetDescriptionViaChefResultsModel()
         {
@@ -55,6 +69,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Finger lickin' good!", descriptions.description);
         }
 
+        /// <summary>
+        /// Tests getting city name from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetCityViaChefResultsModel()
         {
@@ -64,6 +81,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Louiville", location.city);
         }
 
+        /// <summary>
+        /// Tests getting Chef restaurant recommendation review from Chef Results Model
+        /// </summary>
         [Fact]
         public void CanGetChefReviewsViaChefResultsModel()
         {
@@ -73,6 +93,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("This is a raving review", reviews.review);
         }
 
+        /// <summary>
+        /// Tests getting first name from Celebrity Chef Model
+        /// </summary>
         [Fact]
         public void CanGetFirstNameViaCelelbrityChefModel()
         {
@@ -82,6 +105,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Marcus", chef.firstName);
         }
 
+        /// <summary>
+        /// Tests getting last name from Celebrity Chef Model
+        /// </summary>
         [Fact]
         public void CanGetLastNameViaCelebrityChefModel()
         {
@@ -91,6 +117,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Samuelsson", chef.lastName);
         }
 
+        /// <summary>
+        /// Tests getting city from Celebrity Chef Model
+        /// </summary>
         [Fact]
         public void CanGetCityViaCelebrityChefModel()
         {
@@ -100,6 +129,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Addis Ababa", chef.city);
         }
 
+        /// <summary>
+        /// Tests getting favorite from Celebrity Chef Model
+        /// </summary>
         [Fact]
         public void CanGetFavoritesViaCelebrityChefModel()
         {
@@ -109,6 +141,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Estela Restaurant", chef.favorites);
         }
 
+        /// <summary>
+        /// Tests getting restaurant name from Restaurant Model
+        /// </summary>
         [Fact]
         public void CanGetRestaurantNameViaRestaurantModel()
         {
@@ -118,6 +153,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Some Random Bar", restaurant.Name);
         }
 
+        /// <summary>
+        /// Tests getting address from Restaurant Model
+        /// </summary>
         [Fact]
         public void CanGetRestaurantAddressViaRestaurantModel()
         {
@@ -127,6 +165,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("2604 1st Ave, Seattle, WA 98121", restaurant.Address);
         }
 
+        /// <summary>
+        /// Tests getting restuarant description from Restaurant Model
+        /// </summary>
         [Fact]
         public void CanGetDescriptionViaRestaurantModel()
         {
@@ -136,6 +177,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Local New American eats and craft cocktails served in brick-walled gastropub with Mason jar lighting.", restaurant.Description);
         }
 
+        /// <summary>
+        /// Tests getting full user name from User Profile
+        /// </summary>
         [Fact]
         public void CanGetUserProfileFullNameViaUserProfileModel()
         {
@@ -145,6 +189,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Best Restaurant App Ever", userProfile.fullName);
         }
 
+        /// <summary>
+        /// Tests getting alias from category of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetCategoryAliasViaYelpResultsModel()
         {
@@ -154,6 +201,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("test category alias", category.alias);
         }
 
+        /// <summary>
+        /// Tests geting title from category of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetCategoryTitleViaYelpResultsModel()
         {
@@ -163,6 +213,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("test category title", category.title);
         }
 
+        /// <summary>
+        /// Tests getting address line 1 from location of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationAddress1ViaYelpResultsModel()
         {
@@ -172,6 +225,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location Address 1", location.address1);
         }
 
+        /// <summary>
+        /// Tests getting address line 2 from location of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationAddress2ViaYelpResultsModel()
         {
@@ -181,6 +237,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location Address 2", location.address2);
         }
 
+        /// <summary>
+        /// Tests getting address line 3 from location of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationAddress3ViaYelpResultsModel()
         {
@@ -190,6 +249,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location Address 3", location.address3);
         }
 
+        /// <summary>
+        /// Tets getting city from location of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationCityViaYelpResultsModel()
         {
@@ -199,6 +261,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location City", location.city);
         }
 
+        /// <summary>
+        /// Tests getting zip code from location of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationZipCodeViaYelpResultsModel()
         {
@@ -208,6 +273,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location Zip Code",location.zip_code);
         }
 
+        /// <summary>
+        /// Tests getting country from location of of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetLocationCountryViaYelpResultsModel()
         {
@@ -217,6 +285,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location Country", location.country);
         }
 
+        /// <summary>
+        /// Tests getting state from location of Yelp Results Model 
+        /// </summary>
         [Fact]
         public void CanGetLocationStateViaYelpResultsModel()
         {
@@ -226,6 +297,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Location State", location.state);
         }
 
+        /// <summary>
+        /// Tests getting business alias from Business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessAliasViaYelpResultsModel()
         {
@@ -235,6 +309,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Business Alias", business.alias);
         }
 
+        /// <summary>
+        /// Tests getting name of business from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessNameViaYelpResultsModel()
         {
@@ -244,6 +321,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Business Name", business.name);
         }
 
+        /// <summary>
+        /// Tests count of reviews from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessReviewCountViaYelpResultsModel()
         {
@@ -253,6 +333,9 @@ namespace PraiseProvisionsTest
             Assert.Equal(4500, business.review_count);
         }
 
+        /// <summary>
+        /// Tests bool if business is closed/open from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanTestBusinessIsClosedFalseViaYelpResultsModel()
         {
@@ -263,6 +346,9 @@ namespace PraiseProvisionsTest
             Assert.False(business.is_closed);
         }
 
+        /// <summary>
+        /// Tests can get restaurant rating from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessRatingViaYelpResultsModel()
         {
@@ -272,6 +358,9 @@ namespace PraiseProvisionsTest
             Assert.Equal(4, business.rating);
         }
 
+        /// <summary>
+        /// Tests price range as a string from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessPriceViaYelpResultsModel()
         {
@@ -281,6 +370,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Business Price String", business.price);
         }
 
+        /// <summary>
+        /// Tests can get business phone number as a string from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessPhoneViaYelpResultsModel()
         {
@@ -290,6 +382,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Business Phone", business.phone);
         }
 
+        /// <summary>
+        /// Tests can display phone number from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessDisplayPhoneViaYelpResultsModel()
         {
@@ -299,6 +394,9 @@ namespace PraiseProvisionsTest
             Assert.Equal("Test Business Display Phone", business.display_phone);
         }
 
+        /// <summary>
+        /// Tests distance of restaurant from business of Yelp Results Model
+        /// </summary>
         [Fact]
         public void CanGetBusinessDistanceViaYelpResultsModel()
         {
