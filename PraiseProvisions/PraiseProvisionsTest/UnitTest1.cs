@@ -143,5 +143,86 @@ namespace PraiseProvisionsTest
 
             Assert.Equal("Best Restaurant App Ever", userProfile.fullName);
         }
+
+        [Fact]
+        public void CanGetCategoryAliasViaYelpResultsModel()
+        {
+            Category category = new Category();
+            category.alias = "test category alias";
+
+            Assert.Equal("test category alias", category.alias);
+        }
+
+        [Fact]
+        public void CanGetCategoryTitleViaYelpResultsModel()
+        {
+            Category category = new Category();
+            category.title = "test category title";
+
+            Assert.Equal("test category title", category.title);
+        }
+
+        [Fact]
+        public void CanGetLocationAddress1ViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.address1 = "Test Location Address 1";
+
+            Assert.Equal("Test Location Address 1", location.address1);
+        }
+
+        [Fact]
+        public void CanGetLocationAddress2ViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.address2 = "Test Location Address 2";
+
+            Assert.Equal("Test Location Address 2", location.address2);
+        }
+
+        [Fact]
+        public void CanGetLocationAddress3ViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.address3 = "Test Location Address 3";
+
+            Assert.Equal("Test Location Address 3", location.address3);
+        }
+
+        [Fact]
+        public void CanGetLocationCityViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.city = "Test Location City";
+
+            Assert.Equal("Test Location City", location.city);
+        }
+
+        [Fact]
+        public void CanGetLocationZipCodeViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.zip_code = "Test Location Zip Code";
+
+            Assert.Equal("Test Location Zip Code",location.zip_code);
+        }
+
+        [Fact]
+        public void CanGetLocationCountryViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.country = "Test Location Country";
+
+            Assert.Equal("Test Location Country", location.country);
+        }
+
+        [Fact]
+        public void CanGetLocationStateViaYelpResultsModel()
+        {
+            Location location = new Location();
+            location.state = "Test Location State";
+
+            Assert.Equal("Test Location State", location.state);
+        }
     }
 }
