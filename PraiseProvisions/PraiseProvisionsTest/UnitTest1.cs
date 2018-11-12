@@ -4,6 +4,7 @@ using PraiseProvisions;
 using PraiseProvisions.Models;
 using PraiseProvisions.Data;
 using PraiseProvisions.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace PraiseProvisionsTest
 {
@@ -250,16 +251,6 @@ namespace PraiseProvisionsTest
             business.review_count = 4500;
 
             Assert.Equal(4500, business.review_count);
-        }
-
-        [Fact]
-        public void CanTestBusinessIsClosedTrueViaYelpResultsModel()
-        {
-            Business business = new Business();
-            business.is_closed = true;
-            business.is_closed = false;
-
-            Assert.True(business.is_closed);
         }
 
         [Fact]
