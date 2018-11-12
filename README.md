@@ -55,5 +55,5 @@ There are two tables and one join table. The Profile table contains all of the u
 
 ## TOOLS USED
 
-.NET Core, Visual Studio Team Services, Azure DevOps 
+.NET Core, HTML/CSS, Entity Framework, SqlServer, Visual Studio Team Services, Azure DevOps
 
