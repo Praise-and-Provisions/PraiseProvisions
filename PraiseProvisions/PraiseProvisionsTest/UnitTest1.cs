@@ -108,5 +108,32 @@ namespace PraiseProvisionsTest
             Assert.Equal("Estela Restaurant", chef.favorites);
         }
 
+        [Fact]
+        public void CanGetRestaurantNameViaRestaurantModel()
+        {
+            Restaurant restaurant = new Restaurant();
+            restaurant.Name = "Some Random Bar";
+
+            Assert.Equal("Some Random Bar", restaurant.Name);
+        }
+
+        [Fact]
+        public void CanGetRestaurantAddressViaRestaurantModel()
+        {
+            Restaurant restaurant = new Restaurant();
+            restaurant.Address = "2604 1st Ave, Seattle, WA 98121";
+
+            Assert.Equal("2604 1st Ave, Seattle, WA 98121", restaurant.Address);
+        }
+
+        [Fact]
+        public void CanGetDescriptionViaRestaurantMode()
+        {
+            Restaurant restaurant = new Restaurant();
+            restaurant.Description = "Local New American eats and craft cocktails served in brick-walled gastropub with Mason jar lighting.";
+
+            Assert.Equal("Local New American eats and craft cocktails served in brick-walled gastropub with Mason jar lighting.", restaurant.Description);
+        }
+
     }
 }
