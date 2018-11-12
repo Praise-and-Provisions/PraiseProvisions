@@ -127,12 +127,21 @@ namespace PraiseProvisionsTest
         }
 
         [Fact]
-        public void CanGetDescriptionViaRestaurantMode()
+        public void CanGetDescriptionViaRestaurantModel()
         {
             Restaurant restaurant = new Restaurant();
             restaurant.Description = "Local New American eats and craft cocktails served in brick-walled gastropub with Mason jar lighting.";
 
             Assert.Equal("Local New American eats and craft cocktails served in brick-walled gastropub with Mason jar lighting.", restaurant.Description);
+        }
+
+        [Fact]
+        public void CanGetUserProfileFullNameViaUserProfileModel()
+        {
+            UserProfile userProfile = new UserProfile();
+            userProfile.fullName = "Best Restaurant App Ever";
+
+            Assert.Equal("Best Restaurant App Ever", userProfile.fullName);
         }
 
     }
