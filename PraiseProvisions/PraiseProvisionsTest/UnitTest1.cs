@@ -224,5 +224,97 @@ namespace PraiseProvisionsTest
 
             Assert.Equal("Test Location State", location.state);
         }
+
+        [Fact]
+        public void CanGetBusinessAliasViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.alias = "Test Business Alias";
+
+            Assert.Equal("Test Business Alias", business.alias);
+        }
+
+        [Fact]
+        public void CanGetBusinessNameViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.name = "Test Business Name";
+
+            Assert.Equal("Test Business Name", business.name);
+        }
+
+        [Fact]
+        public void CanGetBusinessReviewCountViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.review_count = 4500;
+
+            Assert.Equal(4500, business.review_count);
+        }
+
+        [Fact]
+        public void CanTestBusinessIsClosedTrueViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.is_closed = true;
+            business.is_closed = false;
+
+            Assert.True(business.is_closed);
+        }
+
+        [Fact]
+        public void CanTestBusinessIsClosedFalseViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.is_closed = true;
+            business.is_closed = false;
+
+            Assert.False(business.is_closed);
+        }
+
+        [Fact]
+        public void CanGetBusinessRatingViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.rating = 4;
+
+            Assert.Equal(4, business.rating);
+        }
+
+        [Fact]
+        public void CanGetBusinessPriceViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.price = "Test Business Price String";
+
+            Assert.Equal("Test Business Price String", business.price);
+        }
+
+        [Fact]
+        public void CanGetBusinessPhoneViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.phone = "Test Business Phone";
+
+            Assert.Equal("Test Business Phone", business.phone);
+        }
+
+        [Fact]
+        public void CanGetBusinessDisplayPhoneViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.display_phone = "Test Business Display Phone";
+
+            Assert.Equal("Test Business Display Phone", business.display_phone);
+        }
+
+        [Fact]
+        public void CanGetBusinessDistanceViaYelpResultsModel()
+        {
+            Business business = new Business();
+            business.distance = 8.2;
+
+            Assert.Equal(8.2, business.distance);
+        }
     }
 }
