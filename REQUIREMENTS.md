@@ -33,6 +33,10 @@ _Scope Out_
 #### Stretch
 + Login persistence 
 + Increased amount of curated chef recommended results by city
++ As a fully functioning application; combining with social media accounts such as Instagram/Facebook/Twitter for sharing interactions and lists with your circle
++ As a further developed appliction, PRAISE + PROVISIONS would have it's own Instagram, Facebook and Twitter page
++ As a further developed appliction, the ability for authentication for user profiles, allow users to update and delete their account
++ An admin page for ease of creating, editing, and deleting chef recommendations
 
 ## Functional Requirements
 
