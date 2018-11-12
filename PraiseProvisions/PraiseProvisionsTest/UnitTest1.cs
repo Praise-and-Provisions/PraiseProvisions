@@ -143,6 +143,5 @@ namespace PraiseProvisionsTest
 
             Assert.Equal("Best Restaurant App Ever", userProfile.fullName);
         }
-
     }
 }
