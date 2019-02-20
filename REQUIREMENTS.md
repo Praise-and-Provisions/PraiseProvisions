@@ -1,6 +1,6 @@
 # PROJECT SCOPE
 
-### [PRAISE + PROVISIONS, A CURATED RESTAURANT APP](https://praiseprovisions.azurewebsites.net/) </br>
+### PRAISE + PROVISIONS, A CURATED RESTAURANT APP</br>
 This project is a full stack web application using MVC and API with full CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) operations. The projecT incudes a custum API and use of a third party API.</br>
 
 ## Dev Tools
